@@ -478,7 +478,7 @@ class Connection extends EventEmitter {
       }
       return this.state.events[eventName].apply(this, args);
     } else {
-      this.emit('error', new Error(`No event '${eventName}' in state '${this.state.name}'`));
+      this.emit('error', new Error(`No event '${eventName}' in state '${this.state.name}' args '${arguments}'`));
       return this.close();
     }
   }
